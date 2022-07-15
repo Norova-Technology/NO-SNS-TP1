@@ -1,0 +1,5 @@
+(fp_lib_table
+  (lib (name Sensorhub)(type KiCad)(uri ${KISYSMOD}/Sensorhub.pretty)(options "")(descr ""))
+  (lib (name KiCad404_Wiik_footprints)(type KiCad)(uri C:/01-Software/KiCad/FHW_KiCadLib/KiCad404_Wiik_footprints.pretty)(options "")(descr ""))
+  (lib (name KiCad_Wiik_Lib)(type KiCad)(uri C:/01-Software/KiCad/FHW_KiCadLib/KiCad_Wiik_Lib)(options "")(descr ""))
+)

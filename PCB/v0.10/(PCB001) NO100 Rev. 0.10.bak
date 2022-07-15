@@ -1,0 +1,200 @@
+EESchema Schematic File Version 4
+LIBS:(PCB130) ES401 Rev. 1.10-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 7
+Title "(PCB130) ES401"
+Date "2021-06-02"
+Rev "1.10"
+Comp "Euroskilt - Fredrik H.W."
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L KiCad_Wiik_Lib:Fiducial F1
+U 1 1 6012DCD7
+P 800 7400
+F 0 "F1" H 750 7250 60  0000 L CNN
+F 1 "Fiducial" H 650 7550 60  0000 L CNN
+F 2 "KiCad404_Wiik_footprints:Fiducial_top_OD2.5mm" H 800 7400 60  0001 C CNN
+F 3 "" H 800 7400 60  0001 C CNN
+	1    800  7400
+	1    0    0    -1  
+$EndComp
+$Comp
+L KiCad_Wiik_Lib:Fiducial F2
+U 1 1 60130759
+P 1250 7400
+F 0 "F2" H 1200 7250 60  0000 L CNN
+F 1 "Fiducial" H 1100 7550 60  0000 L CNN
+F 2 "KiCad404_Wiik_footprints:Fiducial_top_OD2.5mm" H 1250 7400 60  0001 C CNN
+F 3 "" H 1250 7400 60  0001 C CNN
+	1    1250 7400
+	1    0    0    -1  
+$EndComp
+$Comp
+L KiCad_Wiik_Lib:Fiducial F3
+U 1 1 60130773
+P 1700 7400
+F 0 "F3" H 1650 7250 60  0000 L CNN
+F 1 "Fiducial" H 1550 7550 60  0000 L CNN
+F 2 "KiCad404_Wiik_footprints:Fiducial_top_OD2.5mm" H 1700 7400 60  0001 C CNN
+F 3 "" H 1700 7400 60  0001 C CNN
+	1    1700 7400
+	1    0    0    -1  
+$EndComp
+$Sheet
+S 800  1100 1600 1350
+U 60199195
+F0 "PWR" 50
+F1 "PWR.sch" 50
+$EndSheet
+$Sheet
+S 2750 1100 1600 1350
+U 601993B9
+F0 "IO" 50
+F1 "IO.sch" 50
+$EndSheet
+$Sheet
+S 4700 1100 1600 1350
+U 601993ED
+F0 "MCU_LTE-modem" 50
+F1 "MCU_LTE-modem.sch" 50
+$EndSheet
+$Sheet
+S 800  3200 1600 1350
+U 60199421
+F0 "GPS" 50
+F1 "GPS.sch" 50
+$EndSheet
+Text Notes 1800 8650 0    118  ~ 0
+NS-EN12966: Class T1+T2+T3 define ambient operating temperature within -40°C to +60°C
+Text Notes 12350 6900 0    79   ~ 0
+Wire termination cross section\n\nCable 1:\n8x 0.5mm2 (20 AWG, max 5A)\nmax 30VDC@3A\n\nCable 2:\n2x1.5mm2 for high voltage (16 AWG, max 10A)\nmax 250VAC@10A | 30VDC@5A
+$Sheet
+S 2750 3200 1600 1350
+U 603AB808
+F0 "LTE" 50
+F1 "LTE.sch" 50
+$EndSheet
+Text Notes 800  950  0    118  ~ 24
+PWR
+Text Notes 2750 950  0    118  ~ 24
+I/O
+Text Notes 4700 950  0    118  ~ 24
+MCU LTE-modem
+Text Notes 800  3050 0    118  ~ 24
+GPS
+Text Notes 2750 3050 0    118  ~ 24
+LTE
+Text GLabel 8900 2800 2    50   Input ~ 0
+Conn_CTRL_DC_LOAD_V+
+Text GLabel 8900 2900 2    50   Output ~ 0
+Conn_CTRL_DC_LOAD_V-
+Text GLabel 8900 2700 2    50   Input ~ 0
+Conn_Signal_Output
+Text GLabel 8900 2400 2    50   Output ~ 0
+Conn_Signal_Input
+Text GLabel 8900 3750 2    50   BiDi ~ 0
+Conn_CTRL_AC_LOAD_CON1
+Text GLabel 8900 3900 2    50   BiDi ~ 0
+Conn_CTRL_AC_LOAD_CON2
+Text GLabel 8900 3000 2    50   Output ~ 0
+Conn_Vin+
+Wire Wire Line
+	8900 3750 8600 3750
+Wire Wire Line
+	8600 3900 8900 3900
+Wire Wire Line
+	8900 2900 8600 2900
+Wire Wire Line
+	8600 2800 8900 2800
+Wire Wire Line
+	8900 2700 8600 2700
+Wire Wire Line
+	8600 2600 8900 2600
+Wire Wire Line
+	8900 2500 8600 2500
+Wire Wire Line
+	8600 2400 8900 2400
+$Sheet
+S 4700 3200 1600 1350
+U 60337937
+F0 "4-20mA Receiver" 50
+F1 "4-20mA Receiver.sch" 50
+$EndSheet
+Text Notes 4700 3050 0    118  ~ 24
+4-20mA Receiver
+Text GLabel 8900 2500 2    50   Output ~ 0
+Conn_current_loop_sens_+input
+Text GLabel 8900 2600 2    50   Input ~ 0
+Conn_current_loop_sens_-return_grounded
+Wire Wire Line
+	8900 3000 8600 3000
+Text Notes 1800 9100 0    118  ~ 0
+Board to be fully pottet in enclosure with electronics grade silicone\n  (issue with acetic acid cure silicones!)
+Text Notes 2000 10350 0    79   ~ 0
+Avoiding damage during potting\nThere are two main dangers to components when potting. The first is that heat from \nthe curing reaction will cause damage to delicate components. If the components \nbeing potted are sensitive to heat, it will be important to choose a compound that \neither gives off a low amount of heat during curing, or that dissipates heat more \neasily, like a thermally conductive potting compound. The second danger is that \nshrinkage of the potting compound during curing may damage sensitive components \nor solder bonds. This can be avoided by choosing a potting compound that shrinks \nless or is more flexible.
+Text Notes 12350 5700 0    79   ~ 16
+Terminal Blocks - Wire to Board\nPUSH-WIRE
+Text Notes 12250 4500 0    79   ~ 16
+https://www.digikey.no/products/en/connectors-interconnects/terminal-blocks-wire-to-board/371?FV=-8%7C371&quantity=0&ColumnSort=-1000009&page=1&k=terminal+block+push+wire&pageSize=500&pkeyword=terminal+block+push+wire
+Text Notes 1200 11100 0    79   ~ 0
+Boar to be potted in enclosure that will be exposed to outdoor environment\nCables 
+$Comp
+L Connector_Generic:Conn_01x01 J102
+U 1 1 603CDB8F
+P 8400 3750
+F 0 "J102" H 8550 3750 50  0000 C CNN
+F 1 "wire pad" H 8400 3650 50  0000 C CNN
+F 2 "KiCad404_Wiik_footprints:WireHole_1.5mm2" H 8400 3750 50  0001 C CNN
+F 3 "~" H 8400 3750 50  0001 C CNN
+	1    8400 3750
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x08 J101
+U 1 1 603DECCA
+P 8400 2700
+F 0 "J101" H 8320 3217 50  0000 C CNN
+F 1 "Conn_01x08" H 8320 3126 50  0000 C CNN
+F 2 "KiCad404_Wiik_footprints:terminalblock_009276008021106" H 8400 2700 50  0001 C CNN
+F 3 "~" H 8400 2700 50  0001 C CNN
+	1    8400 2700
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J103
+U 1 1 603DF81B
+P 8400 3900
+F 0 "J103" H 8550 3900 50  0000 C CNN
+F 1 "wire pad" H 8400 4000 50  0000 C CNN
+F 2 "KiCad404_Wiik_footprints:WireHole_1.5mm2" H 8400 3900 50  0001 C CNN
+F 3 "~" H 8400 3900 50  0001 C CNN
+	1    8400 3900
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8600 3100 8900 3100
+Wire Wire Line
+	8900 3100 8900 3200
+$Comp
+L KiCad_Wiik_Lib:GND #PWR0101
+U 1 1 604004E9
+P 8900 3200
+F 0 "#PWR0101" H 8900 3200 30  0001 C CNN
+F 1 "GND" H 8900 3130 30  0001 C CNN
+F 2 "" H 8900 3200 60  0000 C CNN
+F 3 "" H 8900 3200 60  0000 C CNN
+	1    8900 3200
+	1    0    0    -1  
+$EndComp
+Text Notes 8150 2000 0    59   ~ 0
+CABLE 1:\n\nTerminal Block - \nWire to Board\nPUSH-WIRE\n\nWire termination cross section\n\n8x 0.5mm2 (20 AWG, max 5A)\nmax 30VDC@3A
+Text Notes 8150 5000 0    59   ~ 0
+CABLE 2:\n\nSolder termination\n\nWire termination cross section\n\n2x1.5mm2 for high voltage (16 AWG, max 10A)\nmax 250VAC@10A | 30VDC@5A
+$EndSCHEMATC
